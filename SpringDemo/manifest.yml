@@ -1,0 +1,9 @@
+---
+applications:
+- name: BCBSDemo
+  memory: 1G
+  disk_quota: 1G
+  instances: 1
+  buildpack: java_buildpack_offline
+  services:
+  - mysql
