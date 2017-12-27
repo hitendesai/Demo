@@ -26,14 +26,12 @@ pipeline
   {
     // global server level
     NEXUS_PROTO = 'http'
-    NEXUS_HOST = "nexus.devopsinabox.perficientdevops.com"
-    NEXUS_PORT = "8081"
+    NEXUS_HOST  = "nexus.devopsinabox.perficientdevops.com"
+    NEXUS_PORT  = "8081"
+    NEXUS_CREDSID = 'nexus-admin'
 
     // job specific
     GIT_REPO = 'https://github.com/hitendesai/Demo'
-
-    NEXUS_CREDSID = 'nexus-admin'
-
     NEXUS_REPOSITORY = 'Demo'
     NEXUS_GROUP = ''
 
