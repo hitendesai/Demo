@@ -22,30 +22,21 @@ pipeline
   environment
   {
     // global server level
-    DEPLOY_SERVER = 'deploy.devopsinabox.perficientdevops.com'
-    NEXUS_PROTO = "http"
     NEXUS_HOST = "nexus.devopsinabox.perficientdevops.com"
     NEXUS_PORT = "8081"
 
     // job specific
-    GIT_REPO = 'https://github.com/Perficient-DevOps/jpetstore-6'
+    GIT_REPO = 'https://github.com/hitendesai/Demo'
     NEXUS_CREDSID = 'nexus-admin'
     NEXUS_REPOSITORY = 'petsonline'
     NEXUS_GROUP = ''
-    DEPLOY_ENV_TARGET = "Development"
-    DEPLOY_APP_NAME = 'JPetStore'
-    DEPLOY_APP_PROCESS = 'Deploy'
-    DEPLOY_COMP_NAME = 'JPetStore-app'
 
   }
 
+/*
   parameters {
-    booleanParam (
-      name: 'AUTO_DEPLOY',
-      defaultValue: true,
-      description: 'Post-build deployment by default'
-    )
   }
+*/
 
   stages
   {
@@ -62,9 +53,8 @@ pipeline
           // read configuration from source, pipeline utility steps provides
           // readProperties, readJson, readMavenPom, readYaml, readManifest
 
-          def props = readProperties file: 'gradle.properties'
+          def props = readXMl file: 'SpringDemo/pom.xml'
           def version = props['version']
-
           APP_ID = props['name']
           NEXUS_GROUP = props['group']
 
@@ -84,7 +74,7 @@ pipeline
     stage('Build, Test, and Package') {
       steps
       {
-        dir( 'SpringDemo'){
+        dir( 'SpringDemo' ){
           sh 'mvn compile'
         }
 
