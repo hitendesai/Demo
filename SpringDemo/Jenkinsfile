@@ -97,7 +97,7 @@ pipeline
 
     stage( 'Test Connectivity to Nexus' ){
       steps{
-        sh 'ping -c 2 $NEXUS_HOST'
+        //sh 'ping -c 2 $NEXUS_HOST'
         sh "wget '${NEXUS_HOST}:${NEXUS_PORT}'"
       }
     }
