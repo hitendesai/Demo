@@ -55,8 +55,11 @@ pipeline
 
           def props = readMavenPom file: 'SpringDemo/pom.xml'
           def version = props['version']
+
+          println props
+        
           APP_ID = props['name']
-          NEXUS_GROUP = props['group']
+          //NEXUS_GROUP = props['group']
 
           // expecting timestamp to be in yyyyMMdd-HHmmss format
           VERSION = "${version}_${BUILD_TIMESTAMP}"
@@ -68,6 +71,7 @@ pipeline
         sh "echo 'version: ${VERSION}'"
         sh "echo 'version_tag: ${VERSION_TAG}'"
         sh "echo 'articat_filename: ${ARTIFACT_FILENAME}'"
+
       }
     }
 
