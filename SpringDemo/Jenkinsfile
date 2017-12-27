@@ -70,7 +70,7 @@ pipeline
         }
         sh "echo 'version: ${VERSION}'"
         sh "echo 'version_tag: ${VERSION_TAG}'"
-        sh "echo 'articat_filename: ${ARTIFACT_FILENAME}'"
+        sh "echo 'artifact_filename: ${ARTIFACT_FILENAME}'"
 
       }
     }
@@ -79,7 +79,7 @@ pipeline
       steps
       {
         dir( 'SpringDemo' ){
-          sh 'mvn compile'
+          sh 'mvn war'
         }
 
       }
@@ -98,7 +98,7 @@ pipeline
       steps
       {
         nexusArtifactUploader artifacts:
-          [[artifactId: APP_ID, classifier: '', file: "build/libs/${ARTIFACT_FILENAME}", type: 'war']],
+          [[artifactId: APP_ID, classifier: '', file: "SpringDemo/target/${ARTIFACT_FILENAME}", type: 'war']],
           credentialsId: NEXUS_CREDSID,
           groupId: NEXUS_GROUP,
           nexusUrl: "$NEXUS_HOST:$NEXUS_PORT",
