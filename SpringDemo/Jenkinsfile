@@ -21,12 +21,15 @@ pipeline
   environment
   {
     // global server level
+    NEXUS_PROTO = 'http'
     NEXUS_HOST = "nexus.devopsinabox.perficientdevops.com"
     NEXUS_PORT = "8081"
 
     // job specific
     GIT_REPO = 'https://github.com/hitendesai/Demo'
+
     NEXUS_CREDSID = 'nexus-admin'
+
     NEXUS_REPOSITORY = 'petsonline'
     NEXUS_GROUP = ''
 
@@ -54,8 +57,6 @@ pipeline
 
           def props = readMavenPom file: 'SpringDemo/pom.xml'
           def version = props['version']
-
-          println props
 
           APP_ID = props['name']
           NEXUS_GROUP = props['groupId']
