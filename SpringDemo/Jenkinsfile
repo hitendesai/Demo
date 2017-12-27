@@ -53,7 +53,7 @@ pipeline
           // read configuration from source, pipeline utility steps provides
           // readProperties, readJson, readMavenPom, readYaml, readManifest
 
-          def props = readXMl file: 'SpringDemo/pom.xml'
+          def props = readMavenPom file: 'SpringDemo/pom.xml'
           def version = props['version']
           APP_ID = props['name']
           NEXUS_GROUP = props['group']
