@@ -32,7 +32,7 @@ pipeline
 
     // job specific
     GIT_REPO = 'https://github.com/hitendesai/Demo'
-    NEXUS_REPOSITORY = 'petsonline'
+    NEXUS_REPOSITORY = 'Demo'
     NEXUS_GROUP = ''
 
   }
