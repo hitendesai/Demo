@@ -95,6 +95,13 @@ pipeline
     //   }
     // }
 
+    stage( 'Test Connectivity to Nexus' ){
+      steps{
+        sh 'ping $NEXUS_HOST'
+        sh "wget '${NEXUS_HOST}:${NEXUS_PORT}'"
+      }
+    }
+
     // Publish version to Nexus
     stage('Publish to Nexus') {
       steps
