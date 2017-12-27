@@ -18,6 +18,10 @@ pipeline
     githubPush()
   }
 
+  tools {
+    maven 'M3'
+  }
+
   environment
   {
     // global server level
