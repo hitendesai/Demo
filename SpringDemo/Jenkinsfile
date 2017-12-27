@@ -34,7 +34,7 @@ pipeline
 
     NEXUS_CREDSID = 'nexus-admin'
 
-    NEXUS_REPOSITORY = 'petsonline'
+    NEXUS_REPOSITORY = 'Demo'
     NEXUS_GROUP = ''
 
   }
