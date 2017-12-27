@@ -79,7 +79,7 @@ pipeline
       steps
       {
         dir( 'SpringDemo' ){
-          sh 'mvn jar'
+          sh 'mvn package'
         }
 
       }
