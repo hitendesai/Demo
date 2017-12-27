@@ -3,7 +3,6 @@
   - build-timestamp
   - pipeline-utility-steps
   - nexus-artifact-uploader
-  - ibm-ucdeploy-publisher - https://developer.ibm.com/urbancode/docs/integrating-jenkins-ibm-urbancode-deploy/
 
 */
 
@@ -57,9 +56,9 @@ pipeline
           def version = props['version']
 
           println props
-        
+
           APP_ID = props['name']
-          //NEXUS_GROUP = props['group']
+          NEXUS_GROUP = props['groupId']
 
           // expecting timestamp to be in yyyyMMdd-HHmmss format
           VERSION = "${version}_${BUILD_TIMESTAMP}"
