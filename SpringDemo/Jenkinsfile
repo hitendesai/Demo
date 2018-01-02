@@ -76,7 +76,27 @@ pipeline
 
       }
     }
-
+// execute the pipeline or stage with a given container
+   //agent {
+   // docker {
+      //  image 'maven:3-alpine'
+      //  label 'my-defined-label'
+     //   args  '-v /tmp:/tmp'
+   // }
+//}
+   //Execute the Pipeline, or stage, with a container built from a Dockerfile contained in the source repository
+   //agent {
+    // Equivalent to "docker build -f Dockerfile.build --build-arg version=1.0.2 ./build/
+    //dockerfile {
+        //filename 'Dockerfile.build'
+        //dir 'build'
+        //label 'my-defined-label'
+       // additionalBuildArgs  '--build-arg version=1.0.2'
+  //  }
+//}
+   //
+   //
+   //
     stage('Build, Test, and Package') {
       steps
       {
